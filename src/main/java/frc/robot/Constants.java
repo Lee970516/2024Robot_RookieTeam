@@ -29,9 +29,12 @@ public final class Constants {
     public static final boolean shooterIndexReverse = false;
 
 
-    public static final double shootAMPVol = 0;
-    public static final double shootSpeakerVol = 0.2;
-    public static final double passNoteVol = 0;
+    public static final double shootSpeakerVol_Right = 0.2;
+    public static final double shootSpeakerVol_Left = 0;
+    public static final double shootSpeakerVol_Index = 0;
+    public static final double passNoteVol_Right = 0;
+    public static final double passNoteVol_Left = 0;
+    public static final double passNoteVol_Index = 0;
     public static final double indexReverseVol = 0.1;
     public static final double rightReverseVol = 0;
     public static final double leftReverseVol = 0;

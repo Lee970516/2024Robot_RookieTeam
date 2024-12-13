@@ -47,15 +47,15 @@ public class ShooterSubsystem extends SubsystemBase {
   }
 
   public void shootSpeaker() {
-    shooterMotorRight.setVoltage(ShooterConstants.shootSpeakerVol);
-    shooterMotorLeft.setVoltage(ShooterConstants.shootSpeakerVol);
-    shooterMotorIndex.setVoltage(ShooterConstants.shootSpeakerVol);
+    shooterMotorRight.setVoltage(ShooterConstants.shootSpeakerVol_Right);
+    shooterMotorLeft.setVoltage(ShooterConstants.shootSpeakerVol_Left);
+    shooterMotorIndex.setVoltage(ShooterConstants.shootSpeakerVol_Index);
   }
 
   public void passNote() {
-    shooterMotorRight.setVoltage(ShooterConstants.passNoteVol);
-    shooterMotorLeft.setVoltage(ShooterConstants.passNoteVol);
-    shooterMotorIndex.setVoltage(ShooterConstants.passNoteVol);
+    shooterMotorRight.setVoltage(ShooterConstants.passNoteVol_Right);
+    shooterMotorLeft.setVoltage(ShooterConstants.passNoteVol_Left);
+    shooterMotorIndex.setVoltage(ShooterConstants.passNoteVol_Index);
   }
 
   public void stopShooter() {
@@ -65,7 +65,13 @@ public class ShooterSubsystem extends SubsystemBase {
   }
 
   public void shooterIndexReverse() {
-    shooterMotorIndex.setVoltage(0);
+    shooterMotorIndex.setVoltage(ShooterConstants.indexReverseVol);
+  }
+
+  public void shooterReverse() {
+    shooterMotorIndex.setVoltage(ShooterConstants.indexReverseVol);
+    shooterMotorLeft.setVoltage(ShooterConstants.leftReverseVol);
+    shooterMotorRight.setVoltage(ShooterConstants.rightReverseVol);
   }
 
   public boolean ifSpeedArrive_Speaker() {
