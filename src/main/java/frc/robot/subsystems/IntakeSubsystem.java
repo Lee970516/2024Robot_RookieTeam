@@ -37,7 +37,7 @@ public class IntakeSubsystem extends SubsystemBase {
 
   private final PIDController armPid;
 
-  private final ArmFeedforward armFeedforward;
+  private ArmFeedforward armFeedforward;
 
   private double armAngle;
 

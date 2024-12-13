@@ -11,6 +11,7 @@ import frc.robot.commands.OutNote;
 import frc.robot.commands.OutNote_Down;
 import frc.robot.commands.ShootPrepSpeaker;
 import frc.robot.commands.ShootSpeaker;
+import frc.robot.commands.ShootSpeaker_Auto;
 import frc.robot.commands.ShooterReverse_Index;
 import frc.robot.commands.prepPassNote;
 import frc.robot.subsystems.IntakeSubsystem;
@@ -94,6 +95,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return null;
+    return new ShootSpeaker_Auto(m_ShooterSubsystem, m_IntakeSubsystem);
   }
 }
