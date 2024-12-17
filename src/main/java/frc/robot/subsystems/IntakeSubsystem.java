@@ -124,7 +124,7 @@ public class IntakeSubsystem extends SubsystemBase {
   }
 
   public double getVelocity() {
-    return armEncoder.getVelocity();
+    return Units.rotationsPerMinuteToRadiansPerSecond(armEncoder.getVelocity());
   }
 
   public boolean hasNote() {
@@ -136,13 +136,12 @@ public class IntakeSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
     pidOutput = armPid.calculate(getAngle(), armAngle);
     feedforwardOutput = armFeedforward.calculate(getRadian(), getVelocity())/12;
-    if(feedforwardOutput >= 0.4) {
-      feedforwardOutput = 0.4;
-    }
+
     output = feedforwardOutput + pidOutput;
     SmartDashboard.putBoolean("Intake/HasNote", hasNote());
     SmartDashboard.putNumber("Intake/pidOutput", pidOutput);
     SmartDashboard.putNumber("Intake/feedforwardOutput", feedforwardOutput);
     SmartDashboard.putNumber("Intake/Output", output);
+    intakeArm.set(output);
   }
 }
